@@ -75,14 +75,6 @@ function App() {
         </button>
       </div>
 
-      <PostHogFeature flag="mark-all-complete" match={true}>
-        {todos.length > 0 && (
-          <button onClick={markAllComplete} className="mark-all-button">
-            Mark all complete
-          </button>
-        )}
-      </PostHogFeature>
-
       <div className="todos-list">
         {todos.map((todo) => (
           <div
@@ -105,6 +97,14 @@ function App() {
           </div>
         ))}
       </div>
+
+      <PostHogFeature flag="mark-all-complete" match={true}>
+        {todos.length > 0 && (
+          <button onClick={markAllComplete} className="mark-all-button">
+            Mark all complete
+          </button>
+        )}
+      </PostHogFeature>
 
       {todos.length === 0 && (
         <p className="empty-state">No tasks yet. Add one above!</p>
