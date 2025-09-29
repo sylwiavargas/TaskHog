@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")!).render(
         api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
         defaults: "2025-05-24",
         capture_exceptions: true, // This enables capturing exceptions using Error Tracking
-        debug: false,
+        debug: true,
       }}
     >
       <App />

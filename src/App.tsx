@@ -22,16 +22,15 @@ const getDefaultTasks = (): Todo[] => {
 function App() {
   const [todos, setTodos] = useState<Todo[]>(getDefaultTasks());
   const [inputValue, setInputValue] = useState("");
+  const [userEmail] = useState("hedgie.hoggins@spikes.com");
   const posthog = usePostHog();
+
   useEffect(() => {
-    const id = "123";
-    posthog.identify(id, [
-      {
-        name: "John Doe",
-        email: "john.doe@example.com",
-      },
-    ]);
-  }, [posthog]);
+    posthog.identify(userEmail, {
+      name: "Hedgie Hoggins",
+      email: userEmail,
+    });
+  }, [posthog, userEmail]);
 
   const addTodo = () => {
     if (inputValue.trim() !== "") {
@@ -69,6 +68,7 @@ function App() {
 
   return (
     <div className="app">
+      <div className="user-email">{userEmail}</div>
       <h1>TaskHog</h1>
 
       <div className="input-section">
