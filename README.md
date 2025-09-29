@@ -1,6 +1,8 @@
-# 🦔 TaskHog
+# TaskHog 🦔 
 
 Welcome to TaskHog, a delightfully simple to-do app that helps you stay organized while keeping things fun! Built with React, TypeScript, and powered by PostHog analytics.
+
+![to-do app screen](./task-hog.png)
 
 This repository serves as an illustration for the PostHog MCP guide on feature flags. The three repository branches reflect three stages of the tutorial:
 
