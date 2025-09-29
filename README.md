@@ -6,18 +6,13 @@ Welcome to TaskHog, a delightfully simple to-do app that helps you stay organize
 
 This repository serves as an illustration for the PostHog MCP guide on feature flags. The three repository branches reflect three stages of the tutorial:
 
-- `**main**`: starting setup.
-- `**finished**`: finished app with working feature flags.
-- `**deleted-flag**`: finished app with deleted flags.
+- `main`: starting setup.
+- `finished`: finished app with working feature flags.
+- `deleted-flag`: finished app with deleted flags.
 
 ### Installation
 
 1. Clone the repository
-
-   ```bash
-   git clone <your-repo-url>
-   cd taskhog
-   ```
 
 2. Install dependencies
 
