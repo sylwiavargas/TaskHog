@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PostHogFeature } from "posthog-js/react";
 import "./App.css";
 
 interface Todo {
@@ -74,11 +75,13 @@ function App() {
         </button>
       </div>
 
-      {todos.length > 0 && (
-        <button onClick={markAllComplete} className="mark-all-button">
-          Mark all complete
-        </button>
-      )}
+      <PostHogFeature flag="mark-all-complete" match={true}>
+        {todos.length > 0 && (
+          <button onClick={markAllComplete} className="mark-all-button">
+            Mark all complete
+          </button>
+        )}
+      </PostHogFeature>
 
       <div className="todos-list">
         {todos.map((todo) => (
