@@ -2,11 +2,21 @@ body {
   background-color: white;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .app {
+  width: 100%;
   max-width: 600px;
-  margin: 0 auto;
   padding: 2rem;
   background-color: white;
   min-height: 100vh;
@@ -123,7 +133,7 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 120px;
+  width: 180px;
   height: auto;
   opacity: 0.8;
   transition: opacity 0.3s ease;
