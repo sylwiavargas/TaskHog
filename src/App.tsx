@@ -7,8 +7,19 @@ interface Todo {
   completed: boolean;
 }
 
+// Default tasks for hogs
+const getDefaultTasks = (): Todo[] => {
+  return [
+    { id: 1, text: "Forage for snacks", completed: false },
+    { id: 2, text: "Roll into a ball", completed: false },
+    { id: 3, text: "Explore the hedge", completed: false },
+    { id: 4, text: "Start a hedge fund", completed: false },
+    { id: 5, text: "Nap time", completed: true },
+  ];
+};
+
 function App() {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>(getDefaultTasks());
   const [inputValue, setInputValue] = useState("");
 
   const addTodo = () => {
@@ -41,6 +52,10 @@ function App() {
     }
   };
 
+  const markAllComplete = () => {
+    setTodos(todos.map((todo) => ({ ...todo, completed: true })));
+  };
+
   return (
     <div className="app">
       <h1>TaskHog</h1>
@@ -58,6 +73,12 @@ function App() {
           Add
         </button>
       </div>
+
+      {todos.length > 0 && (
+        <button onClick={markAllComplete} className="mark-all-button">
+          Mark all complete
+        </button>
+      )}
 
       <div className="todos-list">
         {todos.map((todo) => (
