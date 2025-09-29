@@ -22,12 +22,12 @@ const getDefaultTasks = (): Todo[] => {
 function App() {
   const [todos, setTodos] = useState<Todo[]>(getDefaultTasks());
   const [inputValue, setInputValue] = useState("");
-  const [userEmail] = useState("hedgie.hoggins@spikes.com");
+  const [userEmail] = useState("brambell.prickleton@example.com");
   const posthog = usePostHog();
 
   useEffect(() => {
     posthog.identify(userEmail, {
-      name: "Hedgie Hoggins",
+      name: "Brambell Prickleton",
       email: userEmail,
     });
   }, [posthog, userEmail]);
