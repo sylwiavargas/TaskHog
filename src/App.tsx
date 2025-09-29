@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { PostHogFeature } from "posthog-js/react";
+import { useEffect, useState } from "react";
+import { PostHogFeature, usePostHog } from "posthog-js/react";
 import "./App.css";
 
 interface Todo {
@@ -22,6 +22,16 @@ const getDefaultTasks = (): Todo[] => {
 function App() {
   const [todos, setTodos] = useState<Todo[]>(getDefaultTasks());
   const [inputValue, setInputValue] = useState("");
+  const posthog = usePostHog();
+  useEffect(() => {
+    const id = "123";
+    posthog.identify(id, [
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+      },
+    ]);
+  }, [posthog]);
 
   const addTodo = () => {
     if (inputValue.trim() !== "") {
